@@ -26,7 +26,7 @@ web3.eth.getStorageAt("contract address",1)
 
 # call the withdraw function
 
-accounts[0].transfer(to="contract address",data=web3.keccak(text='withdraw')[0:4])
+accounts[0].transfer(to="contract address",data=web3.keccak(text='withdraw()')[0:4])
 
 # submit your instance
 
