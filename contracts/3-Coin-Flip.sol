@@ -1,8 +1,3 @@
-//SPDX-License-Identifier: MIT
-pragma solidity ^0.6.0;
-
-
-
 /* 
 in this challenge, an attacking contract has to be created to ensure that the block number while the call to the CoinFlip
 contract is intiated is the same to get the correct guess everytime the CoinFlip contract is called
@@ -17,8 +12,6 @@ brownie console --network rinkeby
 
 accounts.from_mnemonic("your account mnemonic")
 
-
-
 # go to the scripts folder and update the address and account mnemonic - filename "3-Coin-Flip.py"
 
 # run the script after in brownie console or run it directly
@@ -28,12 +21,17 @@ brownie run 3-Coin-Flip.py --network rinkeby
 
 # deploy the attack contract with the CoinFlip address
 
+CoinFlipAttack.deploy("CoinFlipContractAddress", {'from': a[0]})
+
 # call attack() 10 times
 
-check consecutiveWins value
+CoinFlipAttack[0].attack({'from':a[0]})
+
+# check consecutiveWins value
 
 web3.eth.getStorageAt("CoinFlip address",0)
-the output HexBytes('0x000000000000000000000000000000000000000000000000000000000000000a')
+
+when the output is  HexBytes('0x000000000000000000000000000000000000000000000000000000000000000a')
 
 # Convert to integer 
 
