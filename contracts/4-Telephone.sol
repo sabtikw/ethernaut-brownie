@@ -28,6 +28,14 @@ web3.eth.getStorageAt("TelehphoneContractAddress",0)
 
 pragma solidity 0.8.6;
 
+
+interface Telephone {
+
+function changeOwner(address _address) external;
+
+}
+
+
 contract TelephoneAttack {
 
 constructor(address _Telephone) {
