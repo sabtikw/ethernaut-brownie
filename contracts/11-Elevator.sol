@@ -23,7 +23,7 @@ web3.eth.getStorageAt("ElevatorContractAddress",0)
 */
 
 
-//SPDX-Licence-Identifier: MIT
+//SPDX-License-Identifier: MIT
 pragma solidity 0.8.6;
 
 
