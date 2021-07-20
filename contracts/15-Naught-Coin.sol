@@ -1,11 +1,11 @@
 /* 
 
-in this challenge, we notice that the contract inherits from the standard ERC20 Openzeppeling contract https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/ERC20.sol
-it has approve transferFrom functio which are not overriden by the NaughtCoin Contract and would allow you to transfer
+in this challenge, we notice that the contract inherits from the standard ERC20 Openzeppelin contract https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/ERC20.sol
+it has an approve & a transferFrom functio which are not overriden by the NaughtCoin Contract and would allow you to transfer
 the tokens without the timeLock check. 
 
 approve : allow a spender to transfer token on behalf of owner
-transferFrom : to transfer allowed token
+transferFrom : to transfer allowed token from allowed non token owner
 
 # Open brownie console with rinkeby testnet
 

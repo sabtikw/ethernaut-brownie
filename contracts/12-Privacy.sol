@@ -3,7 +3,7 @@
 
 0 - locked
 1 - ID
-2 - flattening,denomination,awkwardness
+2 - flattening,denomination,awkwardness (all can fit in 256-bit word)
 3 - data[0]
 4 - data[1]
 5 - data[2]

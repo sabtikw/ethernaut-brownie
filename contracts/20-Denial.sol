@@ -11,7 +11,7 @@ accounts.from_mnemonic("your account mnemonic")
 
 # Deploy attack contract
 
-# call setWithfraePartner with attack contract address
+# call setWithdrawPartner with attack contract address as input
 
 # submit
 
@@ -37,7 +37,7 @@ receive() external payable {
 
 while (true) {
 // consumes all the gas of the transaction which will cause the transaction to revert. preventing your partner from claiming ETH
-
+// using revert() will not work as the Denial contract doesn't check the result.
     this;
     }
 

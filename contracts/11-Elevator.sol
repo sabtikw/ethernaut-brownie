@@ -38,7 +38,7 @@ contract ElevatorAttack {
 
     Elevator elev;
 
-constructor(address _address) public {
+constructor(address _address)  {
 
     elev = Elevator(_address);
     }

