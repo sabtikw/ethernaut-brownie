@@ -39,7 +39,7 @@ int('0x0a,16 ) => 10
 
 # submit the instance
 
-# (optionl) call destroy()to cleanup
+# (optionl) call destroy() to cleanup
 
 */
 
