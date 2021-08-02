@@ -34,8 +34,9 @@ first_location = web3.keccak(hexstr='0x00000000000000000000000000000000000000000
 convert to integer => 
 first_location_int = int(first_location.hex(),16)
 
-since the array start after the second storage location , then the array size to overflow to zero is as below
+since the array start after the second storage location (1) , then the array size to point to zero is as below
 
+note 2 ** 256 is the max storage pointer for the dynamic array codex[p]
 
 zero_location = 2 ** 256 - first_location_int
 
