@@ -44,6 +44,7 @@ int('0x0a,16 ) => 10
 
 */
 
+pragma solidity ^0.6.0;
 import "./SafeMath.sol";
 
 interface CoinFlip {
